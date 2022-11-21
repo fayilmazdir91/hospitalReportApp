@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Save Report</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Report Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Report</p>
+		
+		<form action="#" th:action="@{/api/save}" th:object="${report}" method="POST">
+		
+			<input type="hidden" th:field="*{fileNumber}" />
+			
+			<input type="text" th:field="*{patientName}"
+					class="form-control mb-4 col-4" placeholder="First name">
+
+			<input type="text" th:field="*{patientSurname}"
+					class="form-control mb-4 col-4" placeholder="Last name">
+
+			<input type="text" th:field="*{patientIdentification}"
+					class="form-control mb-4 col-4" placeholder="Identification Number">
+					
+			<input type="text" th:field="*{diagnosticTitle}"
+					class="form-control mb-4 col-4" placeholder="Diagnostic Title">
+			
+			<input type="text" th:field="*{diagnosticDetails}"
+					class="form-control mb-4 col-4" placeholder="Diagnostic Details">
+			
+			<input type="text" th:field="*{labWorker}"
+					class="form-control mb-4 col-4" placeholder="Lab Worker Id">
+					
+					
+				
+			<button type="submit" class="btn btn-info col-2">Save</button>
+						
+		</form>
+	
+		<hr>
+		<a th:href="@{/}">Back to Report List</a>
+		
+	</div>
+
+</body>
+
+</html>

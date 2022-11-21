@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Reports</title>
+</head>
+
+<body>	
+<div class="container">
+	   <hr>
+	   <h3>Report For <a class="text-capitalize" th:text="${report.patientName}"></a> <a class="text-uppercase" th:text="${report.patientSurname}"></a> - <a class="text-uppercase" th:text="${report.patientIdentification}"></a></h3>
+	   <hr>
+	   <h2 class="text-center"><a class="text-capitalize" th:text="${report.diagnosticTitle}"></a></h2>
+	   <p class="text-center"><a class="text-capitalize" th:text="${report.diagnosticDetails}"></a></p>
+	   <hr>
+	   <p class="text-right">Lab Worker : <a class="text-capitalize" th:text="${report.labWorker.getWorkerName()}"></a> <a class="text-capitalize" th:text="${report.labWorker.getWorkerSurname()}"></a></p>
+	   <p class="text-right"><a class="text-capitalize" th:text="${report.date}"></a></p>
+	   <a th:href = "@{/}"> Back to Report List</a>
+</div>
+</body>
+</html>
+
+
+
